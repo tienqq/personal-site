@@ -1,10 +1,21 @@
+import { Route, Routes } from 'react-router'
+import Header from './components/Header.jsx'
+import Home from './pages/Home.jsx'
+import Weather from './pages/Weather.jsx'
+import CalorieTracker from './pages/CalorieTracker.jsx'
+
 function App() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-neutral-50 px-4 text-center text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-      <h1 className="mb-2 text-5xl font-bold sm:text-6xl">Hello, World!</h1>
-      <p className="text-lg text-neutral-600 dark:text-neutral-400">
-        I'm Tien Quang. My personal site is coming soon. test   </p>
-    </main>
+    <div className="flex min-h-screen flex-col bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+      <Header />
+      <main className="flex flex-1 flex-col items-center justify-center px-4 text-center">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/weather" element={<Weather />} />
+          <Route path="/calories" element={<CalorieTracker />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
 
